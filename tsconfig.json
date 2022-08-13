@@ -1,13 +1,16 @@
 {
     "compilerOptions": {
-      "module": "commonjs",
+      "module": "CommonJS",
       "target": "esnext",
       "declaration": true,
-      "outDir": "./dist"
+      "outDir": "./dist",
+      "jsx": "react",
+      "lib": ["dom", "esnext"],
+      "esModuleInterop": true
+
     },
     "include": [
       "src/**/*"
     ],
     "exclude": ["node_modules", "dist"]
-
   }
