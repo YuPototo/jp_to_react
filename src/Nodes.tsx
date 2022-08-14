@@ -11,9 +11,7 @@ export default function Nodes({ value }: Props) {
     return (
         <>
             {value.map((node) => (
-                <div key={nanoid()}>
-                    <Node value={node} />
-                </div>
+                <Node key={nanoid()} value={node} />
             ))}
         </>
     )
