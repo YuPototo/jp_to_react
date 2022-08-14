@@ -1,10 +1,15 @@
 import React from 'react'
 import Nodes from '../Nodes'
+import { IElement } from '../type'
 
-export default function Paragraph({ element }: any) {
+type Props = {
+    element: IElement
+}
+
+export default function Paragraph({ element }: Props) {
     return (
-        <p>
+        <div>
             <Nodes value={element.children} />
-        </p>
+        </div>
     )
 }

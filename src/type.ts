@@ -1,6 +1,6 @@
 export interface IElement {
-    type?: string
-    children?: INode[]
+    type: string
+    children: INode[]
 }
 
 export interface IText {
