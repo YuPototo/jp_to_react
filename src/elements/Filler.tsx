@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
 
 export default function Filler(): ReactElement {
-    return <span className="filler" data-testid="filler"></span>
+    return <span className="jp-filler"></span>
 }

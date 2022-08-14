@@ -8,7 +8,7 @@ type Props = {
 
 export default function Paragraph({ element }: Props) {
     return (
-        <div>
+        <div className="jp-paragraph">
             <Nodes value={element.children} />
         </div>
     )

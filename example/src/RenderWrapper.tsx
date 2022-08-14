@@ -10,8 +10,8 @@ export default function RenderWrapper({ data }: Props) {
         <div
             style={{
                 margin: '20px 10px',
-                padding: '20px',
-                backgroundColor: 'lightblue',
+                padding: '5px',
+                backgroundColor: '#e3ffea',
             }}
         >
             <RichTextRenderer data={data} />

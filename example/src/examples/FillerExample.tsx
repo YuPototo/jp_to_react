@@ -1,22 +1,25 @@
 import React from 'react'
+import Example from '../Example'
 import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
-export default function Paragraph() {
+export default function Filler() {
     const baseData = [
         {
             type: 'paragraph',
-            children: [{ text: 'This is a paragraph' }],
+            children: [
+                { text: 'This is a filler:    ' },
+                { type: 'filler', children: [{ text: '' }] },
+            ],
         },
     ]
 
     const data = JSON.stringify(baseData)
 
     return (
-        <div>
-            <h2 style={{ margin: '20px auto' }}>Paragraph</h2>
+        <Example title="Filler">
             <RawDataViewer data={baseData} />
             <RenderWrapper data={data} />
-        </div>
+        </Example>
     )
 }

@@ -1,25 +1,22 @@
 import React from 'react'
+import Example from '../Example'
 import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
-export default function Filler() {
+export default function BoldText() {
     const baseData = [
         {
-            type: 'paragraph',
-            children: [
-                { text: 'This is a filler:    ' },
-                { type: 'filler', children: [] },
-            ],
+            text: 'this is bold',
+            bold: true,
         },
     ]
 
     const data = JSON.stringify(baseData)
 
     return (
-        <div>
-            <h2 style={{ margin: '20px auto' }}>Filler</h2>
+        <Example title="Bold">
             <RawDataViewer data={baseData} />
             <RenderWrapper data={data} />
-        </div>
+        </Example>
     )
 }

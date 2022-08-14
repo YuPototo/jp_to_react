@@ -38,7 +38,7 @@ export default function RichTextRenderer({ data }: Props) {
 
     // step3: render
     return (
-        <div data-testid="rich-text" className="rich-text">
+        <div data-testid="rich-text" className="jp-rich-text">
             <Nodes value={value} />
         </div>
     )
