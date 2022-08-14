@@ -85,7 +85,7 @@ describe('RichTextRenderer simple test', () => {
         const { container } = render(<RichTextRenderer data={data} />)
 
         const element = container.getElementsByClassName('jp-filler')[0]
-        expect(element).not.toBeNull()
+        expect(element).not.toBeUndefined()
     })
 })
 
@@ -153,5 +153,22 @@ describe('render tip element', () => {
 
         const element = container.getElementsByClassName('jp-tip')[0]
         expect(element).toHaveTextContent('这是文本')
+    })
+})
+
+describe('render image', () => {
+    it('should render image', () => {
+        const jsonData = [
+            {
+                type: 'image',
+                src: 'https://www.baidu.com/img/baidu_jgylogo3.gif',
+                children: [{ text: '' }],
+            },
+        ]
+        const data = JSON.stringify(jsonData)
+        const { container } = render(<RichTextRenderer data={data} />)
+
+        const element = container.getElementsByClassName('jp-image')[0]
+        expect(element).not.toBeUndefined()
     })
 })

@@ -7,6 +7,8 @@ import BoldAndUnderline from './examples/TextBoldAndUnderline'
 import Underline from './examples/TextUnderline'
 import TipSimple from './examples/TipExample'
 import TipSimpleTwo from './examples/TipExample2'
+import ImageExmaple from './examples/ImageExample'
+import ComplexOne from './examples/complex/ComplexOne'
 
 function App() {
     return (
@@ -27,6 +29,12 @@ function App() {
                 <Filler />
                 <TipSimple />
                 <TipSimpleTwo />
+                <ImageExmaple />
+            </section>
+
+            <section className="section">
+                <h2>Complex Example</h2>
+                <ComplexOne />
             </section>
         </div>
     )

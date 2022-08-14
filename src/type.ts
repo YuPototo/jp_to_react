@@ -8,6 +8,12 @@ export interface ITip extends IElement {
     tip: string
 }
 
+export interface IImage extends IElement {
+    type: 'image'
+    src: string
+    children: [{ text: '' }]
+}
+
 export interface IText {
     text: string
 }

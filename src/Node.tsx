@@ -2,9 +2,10 @@ import React from 'react'
 import Filler from './elements/Filler'
 import Leaf from './Leaf'
 import Paragraph from './elements/Paragraph'
-import { IElement, INode, ITip } from './type'
+import { IElement, INode, ITip, IImage } from './type'
 import { isElement } from './utils/isElement'
 import Tip from './elements/Tip'
+import Image from './elements/Image'
 
 const renderElement = (element: IElement) => {
     switch (element.type) {
@@ -14,6 +15,8 @@ const renderElement = (element: IElement) => {
             return <Paragraph element={element} />
         case 'tip':
             return <Tip element={element as ITip} />
+        case 'image':
+            return <Image element={element as IImage} />
         default:
             console.error(`unknown element type: ${element.type}`)
             return <></>
