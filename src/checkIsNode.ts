@@ -1,41 +1,39 @@
-import { IElement, INode } from "./type";
+import { INode } from './type'
+import { isObject } from 'lodash'
 
-function isValidText(value: any) {
-    if (value.text === undefined) {
-        return false;
+interface MaybeElement {
+    type: string
+    children: unknown
+}
+
+function isMaybeElement(value: unknown): value is MaybeElement {
+    if (!isObject(value)) return false
+    if (!('type' in value)) return false
+    if (typeof (value as { type: unknown }).type !== 'string') return false
+
+    return true
+}
+
+function isValidText(value: unknown) {
+    if (!isObject(value)) return false
+
+    if (!('text' in value)) {
+        return false
     }
-    return true;
+    return true
 }
 
-function isElement(value: any) {
-    return value.type !== undefined;
-}
-
-function isValidElement(value: any): value is IElement {
-    if (value.children === undefined) {
-        return false;
-    }
-    return true;
-}
-
-// todo
 export default function checkIsNode(value: unknown): value is INode[] {
-    const isArray = Array.isArray(value);
+    const isArray = Array.isArray(value)
+    if (!isArray) return false
 
-    // false case 1
-    if (!isArray) return false;
-
-    for (const node of value) {
-        if (isElement(node)) {
-            // false case 2
-            if (!isValidElement(node)) return false;
-
-            // false case 3
-            if (!checkIsNode(node.children)) return false;
-        } else {
-            if (!isValidText(node)) return false;
+    for (const node of value as unknown[]) {
+        if (isMaybeElement(node)) {
+            if (!checkIsNode(node.children)) return false
+        } else if (!isValidText(node)) {
+            return false
         }
     }
 
-    return true;
+    return true
 }

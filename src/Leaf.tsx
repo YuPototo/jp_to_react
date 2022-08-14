@@ -1,6 +1,9 @@
-import React from "react";
+import React from 'react'
 
-//@ts-ignore
-export default function Leaf({ text }) {
-    return <span>{text}</span>;
+type Props = {
+    text: string
+}
+
+export default function Leaf({ text }: Props) {
+    return <span>{text}</span>
 }
