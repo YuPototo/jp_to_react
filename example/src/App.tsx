@@ -9,6 +9,8 @@ import TipSimple from './examples/TipExample'
 import TipSimpleTwo from './examples/TipExample2'
 import ImageExmaple from './examples/ImageExample'
 import ComplexOne from './examples/complex/ComplexOne'
+import ComplexTwo from './examples/complex/ComplexTwo'
+import ComplexThree from './examples/complex/ComplexThree'
 
 function App() {
     return (
@@ -35,6 +37,8 @@ function App() {
             <section className="section">
                 <h2>Complex Example</h2>
                 <ComplexOne />
+                <ComplexTwo />
+                <ComplexThree />
             </section>
         </div>
     )
