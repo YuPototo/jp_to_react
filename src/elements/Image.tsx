@@ -8,7 +8,7 @@ type Props = {
 export default function Image({ element }: Props): ReactElement {
     return (
         <div className="jp-image">
-            <img src={element.src} alt="image"></img>
+            <img src={element.src} alt={element.alt}></img>
         </div>
     )
 }

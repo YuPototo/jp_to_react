@@ -8,6 +8,7 @@ import Underline from './examples/TextUnderline'
 import TipSimple from './examples/TipExample'
 import TipSimpleTwo from './examples/TipExample2'
 import ImageExmaple from './examples/ImageExample'
+import ImageExmaple2 from './examples/ImageExample2'
 import ComplexOne from './examples/complex/ComplexOne'
 import ComplexTwo from './examples/complex/ComplexTwo'
 import ComplexThree from './examples/complex/ComplexThree'
@@ -32,6 +33,7 @@ function App() {
                 <TipSimple />
                 <TipSimpleTwo />
                 <ImageExmaple />
+                <ImageExmaple2 />
             </section>
 
             <section className="section">

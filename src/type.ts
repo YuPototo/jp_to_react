@@ -11,6 +11,7 @@ export interface ITip extends IElement {
 export interface IImage extends IElement {
     type: 'image'
     src: string
+    alt: string
     children: [{ text: '' }] // 似无必要，但是为了统一，还是加上
 }
 
