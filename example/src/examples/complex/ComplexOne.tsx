@@ -4,7 +4,7 @@ import RawDataViewer from '../../RawDataViewer'
 import RenderWrapper from '../../RenderWrapper'
 
 export default function ComplexOne() {
-    const baseData = [
+    const data = [
         {
             type: 'paragraph',
             children: [
@@ -18,11 +18,9 @@ export default function ComplexOne() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="One Sentence">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

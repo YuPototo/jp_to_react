@@ -1,8 +1,9 @@
 import React from 'react'
 import RichTextRenderer from '../../dist/RichTextRenderer'
+import { INode } from '../../dist/type'
 
 type Props = {
-    data: string
+    data: INode[]
 }
 
 export default function RenderWrapper({ data }: Props) {

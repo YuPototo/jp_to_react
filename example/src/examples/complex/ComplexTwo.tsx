@@ -4,7 +4,7 @@ import RawDataViewer from '../../RawDataViewer'
 import RenderWrapper from '../../RenderWrapper'
 
 export default function ComplexTwo() {
-    const baseData = [
+    const data = [
         {
             type: 'paragraph',
             children: [
@@ -21,11 +21,9 @@ export default function ComplexTwo() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="An Option from real question">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

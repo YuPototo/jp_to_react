@@ -4,7 +4,7 @@ import RawDataViewer from '../../RawDataViewer'
 import RenderWrapper from '../../RenderWrapper'
 
 export default function ComplexThree() {
-    const baseData = [
+    const data = [
         {
             type: 'paragraph',
             children: [
@@ -42,11 +42,9 @@ export default function ComplexThree() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="An explanation from real question">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

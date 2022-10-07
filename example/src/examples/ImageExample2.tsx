@@ -4,7 +4,7 @@ import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
 export default function ImageExmaple2() {
-    const baseData = [
+    const data = [
         {
             type: 'image',
             alt: 'This is Alt',
@@ -13,11 +13,9 @@ export default function ImageExmaple2() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="不存在的 Image">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

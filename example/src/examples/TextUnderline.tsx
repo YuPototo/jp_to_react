@@ -4,18 +4,16 @@ import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
 export default function UnderlineText() {
-    const baseData = [
+    const data = [
         {
             text: 'this is underline',
             underline: true,
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="Underline">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

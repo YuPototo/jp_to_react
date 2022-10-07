@@ -4,7 +4,7 @@ import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
 export default function Filler() {
-    const baseData = [
+    const data = [
         {
             type: 'paragraph',
             children: [
@@ -14,11 +14,9 @@ export default function Filler() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="Filler">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

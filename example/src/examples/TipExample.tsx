@@ -4,7 +4,7 @@ import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
 export default function TipSimple() {
-    const baseData = [
+    const data = [
         {
             type: 'paragraph',
             children: [
@@ -17,11 +17,9 @@ export default function TipSimple() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="Simple Tip">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

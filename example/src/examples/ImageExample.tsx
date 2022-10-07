@@ -4,7 +4,7 @@ import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
 export default function ImageExmaple() {
-    const baseData = [
+    const data = [
         {
             type: 'image',
             alt: 'this is alt',
@@ -13,11 +13,9 @@ export default function ImageExmaple() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="Image">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

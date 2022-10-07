@@ -4,7 +4,7 @@ import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
 export default function BoldAndUnderline() {
-    const baseData = [
+    const data = [
         {
             type: 'paragraph',
             children: [
@@ -19,11 +19,9 @@ export default function BoldAndUnderline() {
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="Underline and bold">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )

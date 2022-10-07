@@ -2,33 +2,17 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import RichTextRenderer from '../RichTextRenderer'
 import '@testing-library/jest-dom/extend-expect'
-
-describe('RichTextRenderer parse failure', () => {
-    beforeEach(() => {
-        /* disable error log
-          https://stackoverflow.com/a/58717352
-         */
-        jest.spyOn(console, 'error').mockImplementation(() => {})
-    })
-
-    it('if data is not valid json format, return parse error', () => {
-        const data = 'bad_data'
-
-        render(<RichTextRenderer data={data} />)
-        const element = screen.getByTestId('rich-text')
-        expect(element).toHaveTextContent(/json parse 错误/)
-    })
-})
+import { INode } from '../type'
 
 describe('RichTextRenderer check node interface', () => {
     it('bad format', () => {
-        const jsonData = [
+        const data = [
             {
                 name: 'yu',
             },
         ]
-        const data = JSON.stringify(jsonData)
 
+        //@ts-ignore
         render(<RichTextRenderer data={data} />)
         const element = screen.getByTestId('rich-text')
         expect(element).toHaveTextContent(
@@ -42,12 +26,11 @@ describe('RichTextRenderer check node interface', () => {
  */
 describe('RichTextRenderer simple test', () => {
     it('render a simple text', () => {
-        const jsonData = [
+        const data = [
             {
                 text: 'simple text',
             },
         ]
-        const data = JSON.stringify(jsonData)
         render(<RichTextRenderer data={data} />)
 
         const element = screen.getByTestId('rich-text')
@@ -55,13 +38,12 @@ describe('RichTextRenderer simple test', () => {
     })
 
     it('paragraph with one text child', () => {
-        const jsonData = [
+        const data = [
             {
                 type: 'paragraph',
                 children: [{ text: '新しい 服' }],
             },
         ]
-        const data = JSON.stringify(jsonData)
         render(<RichTextRenderer data={data} />)
 
         const element = screen.getByTestId('rich-text')
@@ -69,7 +51,7 @@ describe('RichTextRenderer simple test', () => {
     })
 
     it('render paragraph with filler', () => {
-        const jsonData = [
+        const data = [
             {
                 type: 'paragraph',
                 children: [
@@ -81,7 +63,6 @@ describe('RichTextRenderer simple test', () => {
                 ],
             },
         ]
-        const data = JSON.stringify(jsonData)
         const { container } = render(<RichTextRenderer data={data} />)
 
         const element = container.getElementsByClassName('jp-filler')[0]
@@ -91,13 +72,12 @@ describe('RichTextRenderer simple test', () => {
 
 describe('Render text', () => {
     it('should render bold text', () => {
-        const jsonData = [
+        const data = [
             {
                 text: 'bold text',
                 bold: true,
             },
         ]
-        const data = JSON.stringify(jsonData)
         const { container } = render(<RichTextRenderer data={data} />)
 
         const element = container.getElementsByClassName('jp-bold')[0]
@@ -105,13 +85,12 @@ describe('Render text', () => {
     })
 
     it('should render underline', () => {
-        const jsonData = [
+        const data = [
             {
                 text: 'underline text',
                 underline: true,
             },
         ]
-        const data = JSON.stringify(jsonData)
         const { container } = render(<RichTextRenderer data={data} />)
 
         const element = container.getElementsByClassName('jp-underline')[0]
@@ -121,13 +100,12 @@ describe('Render text', () => {
 
 describe('render paragraph', () => {
     it('should add paragraph classname', () => {
-        const jsonData = [
+        const data = [
             {
                 type: 'paragraph',
                 children: [{ text: 'this is paragraph' }],
             },
         ]
-        const data = JSON.stringify(jsonData)
         const { container } = render(<RichTextRenderer data={data} />)
 
         const element = container.getElementsByClassName('jp-paragraph')[0]
@@ -137,7 +115,7 @@ describe('render paragraph', () => {
 
 describe('render tip element', () => {
     it('should render tip element', () => {
-        const jsonData = [
+        const data = [
             {
                 type: 'tip',
                 tip: '这是tip',
@@ -148,7 +126,6 @@ describe('render tip element', () => {
                 ],
             },
         ]
-        const data = JSON.stringify(jsonData)
         const { container } = render(<RichTextRenderer data={data} />)
 
         const element = container.getElementsByClassName('jp-tip')[0]
@@ -158,14 +135,13 @@ describe('render tip element', () => {
 
 describe('render image', () => {
     it('should render image', () => {
-        const jsonData = [
+        const data = [
             {
                 type: 'image',
                 src: 'https://www.baidu.com/img/baidu_jgylogo3.gif',
                 children: [{ text: '' }],
             },
         ]
-        const data = JSON.stringify(jsonData)
         const { container } = render(<RichTextRenderer data={data} />)
 
         const element = container.getElementsByClassName('jp-image')[0]

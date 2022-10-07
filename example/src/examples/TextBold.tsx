@@ -4,18 +4,16 @@ import RawDataViewer from '../RawDataViewer'
 import RenderWrapper from '../RenderWrapper'
 
 export default function BoldText() {
-    const baseData = [
+    const data = [
         {
             text: 'this is bold',
             bold: true,
         },
     ]
 
-    const data = JSON.stringify(baseData)
-
     return (
         <Example title="Bold">
-            <RawDataViewer data={baseData} />
+            <RawDataViewer data={data} />
             <RenderWrapper data={data} />
         </Example>
     )
